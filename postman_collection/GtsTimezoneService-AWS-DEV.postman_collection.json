@@ -1,0 +1,503 @@
+{
+	"info": {
+		"_postman_id": "a208a36e-2b71-4c4e-9edc-9dea21b89f70",
+		"name": "GtsTimezoneService-AWS_DEV",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create a Timezone",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {     \r\n        \"gts_timezone_name\" : \"CST America\",\r\n        \"gts_timezone_description\" :\" Central Standard Time is the timezone through out America\",\r\n       \"gts_timezone_status\":1\r\n   },  \r\n    {   \r\n        \"gts_timezone_name\" : \"IST Delhi \",\r\n        \"gts_timezone_description\" :\" Indian Standard Time is the timezone through out the India\",\r\n        \"gts_timezone_status\":1\r\n    }  \r\n]\r\n    ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{AWS_DEV_URL}}/api/v1/timezone",
+					"host": [
+						"{{AWS_DEV_URL}}"
+					],
+				
+					"path": [
+						"api",
+						"v1",
+						"timezone"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Timezone name cannot be empty",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {     \r\n        \"gts_timezone_name\" : \"\",\r\n        \"gts_timezone_description\" :\" BST Bangladesh is the timzone through out ythe india\"\r\n    },  \r\n     \r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{AWS_DEV_URL}}/api/v1/timezone",
+					"host": [
+						"{{AWS_DEV_URL}}"
+					],
+				
+					"path": [
+						"api",
+						"v1",
+						"timezone"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Timezone already exists",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {     \r\n        \"gts_timezone_name\" : \"IST Delhi \",\r\n        \"gts_timezone_description\" :\" Indian Standard Time  is the timezone through out india\"\r\n       \"gts_timezone_status\":1\r\n   },  \r\n     \r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{AWS_DEV_URL}}/api/v1/timezone",
+					"host": [
+						"{{AWS_DEV_URL}}"
+					],
+				
+					"path": [
+						"api",
+						"v1",
+						"timezone"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update timezone details",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {   \r\n        \"gts_timezone_id\":1,\r\n        \"gts_timezone_name\" : \"GMT  \",\r\n        \"gts_timezone_description\" :\" Greenwich Meridian Time is the timezone through out England\",\r\n        \"gts_timezone_status\":0\r\n    }\r\n     \r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{AWS_DEV_URL}}/api/v1/timezone",
+					"host": [
+						"{{AWS_DEV_URL}}"
+					],
+				
+					"path": [
+						"api",
+						"v1",
+						"timezone"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Timezone id is invalid",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {   \r\n        \"gts_timezone_id\":-1,\r\n        \"gts_timezone_name\" : \"Bst bangladesh\",\r\n        \"gts_timezone_description\" :\"Bst bangladesh is the timezone through out Bangladesh\",\r\n        \"gts_timezone_status\":1\r\n    },  \r\n    \r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{AWS_DEV_URL}}/api/v1/timezone",
+					"host": [
+						"{{AWS_DEV_URL}}"
+					],
+				
+					"path": [
+						"api",
+						"v1",
+						"timezone"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Timezone id does not exist",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {   \r\n        \"gts_timezone_id\":197086986,\r\n        \"gts_timezone_name\" : \"JST Japan\",\r\n        \"gts_timezone_description\" :\"Japan Standard Time is the timezone through out japan\",\r\n        \"gts_timezone_status\":1\r\n    },  \r\n     \r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{AWS_DEV_URL}}/api/v1/timezone",
+					"host": [
+						"{{AWS_DEV_URL}}"
+					],
+				
+					"path": [
+						"api",
+						"v1",
+						"timezone"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Timezone name cannot be empty",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {   \r\n        \"gts_timezone_id\":1,\r\n        \"gts_timezone_name\" : \"\",\r\n        \"gts_timezone_description\" :\"Description\",\r\n        \"gts_language_status\":1\r\n    },  \r\n     \r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{AWS_DEV_URL}}/api/v1/timezone",
+					"host": [
+						"{{AWS_DEV_URL}}"
+					],
+				
+					"path": [
+						"api",
+						"v1",
+						"timezone"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Timezone name already exists",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {   \r\n        \"gts_timezone_id\":1,\r\n        \"gts_timezone_name\" : \"IST Delhi \",\r\n        \"gts_timezone_description\" :\"IST Delhi is the timezone through out India\",\r\n        \"gts_timezone_status\":1\r\n    },  \r\n      \r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{AWS_DEV_URL}}/api/v1/timezone",
+					"host": [
+						"{{AWS_DEV_URL}}"
+					],
+				
+					"path": [
+						"api",
+						"v1",
+						"timezone"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all timezone",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{AWS_DEV_URL}}/api/v1/timezone",
+					"host": [
+						"{{AWS_DEV_URL}}"
+					],
+				
+					"path": [
+						"api",
+						"v1",
+						"timezone"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all active timezone",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{AWS_DEV_URL}}/api/v1/timezone/active",
+					"host": [
+						"{{AWS_DEV_URL}}"
+					],
+				
+					"path": [
+						"api",
+						"v1",
+						"timezone",
+						"active"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all inactive timezone",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{AWS_DEV_URL}}/api/v1/timezone/inactive",
+					"host": [
+						"{{AWS_DEV_URL}}"
+					],
+				
+					"path": [
+						"api",
+						"v1",
+						"timezone",
+						"inactive"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get timezone by timezone id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{AWS_DEV_URL}}/api/v1/timezone/timezone_id/1",
+					"host": [
+						"{{AWS_DEV_URL}}"
+					],
+				
+					"path": [
+						"api",
+						"v1",
+						"timezone",
+						"timezone_id",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Timezone id is invalid",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{AWS_DEV_URL}}/api/v1/timezone/timezone_id/-1",
+					"host": [
+						"{{AWS_DEV_URL}}"
+					],
+				
+					"path": [
+						"api",
+						"v1",
+						"timezone",
+						"timezone_id",
+						"-1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Timezoneid does not exist",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{AWS_DEV_URL}}/api/v1/timezone/timezone_id/7687",
+					"host": [
+						"{{AWS_DEV_URL}}"
+					],
+				
+					"path": [
+						"api",
+						"v1",
+						"timezone",
+						"timezone_id",
+						"7687"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get timezone by timezone name",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{AWS_DEV_URL}}/api/v1/timezone/timezone_name/k",
+					"host": [
+						"{{AWS_DEV_URL}}"
+					],
+				
+					"path": [
+						"api",
+						"v1",
+						"timezone",
+						"timezone_name",
+						"k"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Timezone name does not exist",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{AWS_DEV_URL}}/api/v1/timezone/timezone_name/wsfg",
+					"host": [
+						"{{AWS_DEV_URL}}"
+					],
+				
+					"path": [
+						"api",
+						"v1",
+						"timezone",
+						"timezone_name",
+						"wsfg"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete by timezone id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{AWS_DEV_URL}}/api/v1/timezone/timezone_id/2",
+					"host": [
+						"{{AWS_DEV_URL}}"
+					],
+				
+					"path": [
+						"api",
+						"v1",
+						"timezone",
+						"timezone_id",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Timezone id does not exist",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{AWS_DEV_URL}}/api/v1/timezone/timezone_id/9898",
+					"host": [
+						"{{AWS_DEV_URL}}"
+					],
+				
+					"path": [
+						"api",
+						"v1",
+						"timezone",
+						"timezone_id",
+						"9898"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": [
+			{
+				"key": "in",
+				"value": "header",
+				"type": "string"
+			},
+			{
+				"key": "value",
+				"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ7XCJ1c2VyX2lkXCI6MyxcInByaW1hcnlfcm9sZVwiOlwiU0VSVklDRV9QUk9WSURFUlwiLFwib3RoZXJfcm9sZXNcIjpcIlwiLFwicGVybWlzc2lvbnNcIjpcIlwifSIsImV4cCI6MTYyMjA2MDQ4MSwiaWF0IjoxNjIyMDI0NDgxfQ.-2BX6KywF-YNdEbxsEwbAaEZyJkTgxIFKncYt4tOnA8",
+				"type": "string"
+			},
+			{
+				"key": "key",
+				"value": "Auth_Token",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+"variable": [
+		{
+			"key": "AWS_DEV_URL",
+			"value": "https://6kmxdtde21.execute-api.ap-south-1.amazonaws.com/dev"
+		}
+	]
+}
