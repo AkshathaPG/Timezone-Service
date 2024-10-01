@@ -6,8 +6,8 @@ terraform {
 
 provider "aws" {
   region     = "eu-north-1"
-  access_key = "AKIA4MTWJGD54DCDIZ6J"    # Use environment variables or AWS credentials instead of hardcoding
-  secret_key = "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" # Same as above
+  access_key = "AKIA4MTWJGD54DCDIZ6J"    
+  secret_key = "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" 
 }
 
 resource "aws_vpc" "main" {
