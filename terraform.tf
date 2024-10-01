@@ -1,8 +1,4 @@
-terraform {
-  backend "local" {
-    path = "/var/lib/jenkins/workspace/Terraform-Pipeline/terraform.tfstate"
-  }
-}
+
 
 provider "aws" {
   region     = "eu-north-1"
