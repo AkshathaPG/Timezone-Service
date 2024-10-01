@@ -5,9 +5,8 @@ terraform {
 }
 
 provider "aws" {
-  region     = "eu-north-1"
-  access_key = "AKIA4MTWJGD54DCDIZ6J"    
-  secret_key = "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" 
+  region = "eu-north-1"
+  # Access and secret keys are automatically picked from environment variables or AWS credentials file
 }
 
 resource "aws_vpc" "main" {
@@ -17,4 +16,3 @@ resource "aws_vpc" "main" {
     Name = "main-vpc"
   }
 }
-
